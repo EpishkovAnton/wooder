@@ -1,0 +1,455 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+@font-face {
+	font-family: 'ProximaNova';
+	src: url('../fonts/proximanova-bold.eot');
+	src: local('☺'), url('../fonts/proximanova-bold.woff') format('woff'), url('../fonts/proximanova-bold.ttf') format('truetype'), url('../fonts/proximanova-bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova';
+	src: url('../fonts/proximanova-regular.eot');
+	src: local('☺'), url('../fonts/proximanova-regular.woff') format('woff'), url('../fonts/proximanova-regular.ttf') format('truetype'), url('../fonts/proximanova-regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+//<Подключаем шрифты>=======================================================================================
+
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+$md1: $mw+12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+
+body {
+	color: #000;
+	font-size: 14px;
+
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+
+	&.loaded {}
+}
+
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms.scss";
+@import "ui.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "../../js/fancybox/jquery.fancybox.scss";
+//@import "datepicker.scss";
+//@import "fontawesome.scss";
+//@import "popover.min.scss";
+//@import "baguetteBox.scss";
+//@import "pagging.scss";
+//@import "icons.scss";
+@import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	@include flexbox();
+	flex-direction: column;
+
+
+
+
+}
+
+.main-screen {
+	@include flexbox();
+	height: 500px;
+	position: relative;
+
+	&__columnl {
+		flex: 1 1 100%;
+		height: 100vh;
+		position: relative;
+
+		&::after {
+			content: "F";
+			width: 187px;
+			height: 264px;
+			opacity: 0.07;
+			color: #bea67c;
+			font-family: "ProximaNova";
+			font-size: 396px;
+			font-weight: 700;
+			text-transform: uppercase;
+			position: absolute;
+			left: 285px;
+			top: 565px;
+			z-index: 5;
+
+
+		}
+
+
+		img {}
+
+	}
+
+	&__columnr {
+		position: relative;
+		flex: 1 1 100%;
+		height: 100vh;
+
+		img {}
+
+	}
+}
+
+
+
+
+
+//====================================================================================================
+.block-wood {
+	padding: 91px 0px 104px 0px;
+	position: relative;
+
+
+
+
+
+
+
+
+
+	&__wrapper {
+		@include flexbox();
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}
+
+.repeat {
+
+
+	&__info {
+		margin-top: 118px;
+		margin-right: 48px;
+		position: relative;
+
+
+	}
+
+
+
+	&__tittle {
+		margin: 0px 0px 32px 0px;
+		color: #010101;
+		font-family: "ProximaNova";
+		font-size: 48px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 3.36px;
+
+
+		&::before {
+			content: "";
+			width: 151px;
+			height: 1px;
+			border: 1px solid #000000;
+			position: absolute;
+			top: 20px;
+			left: -182px;
+
+		}
+	}
+
+	&__text {
+		width: 341px;
+		color: #464646;
+		font-family: "ProximaNova";
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 25px;
+		letter-spacing: 0.38px;
+		margin: 0px 0px 32px 0px;
+
+		&::before {
+			content: "";
+			width: 44px;
+			height: 4px;
+			background-color: #bea67c;
+			position: absolute;
+			top: 90px;
+			left: -75px;
+
+		}
+	}
+
+	&__more {
+		color: #000000;
+		font-family: "ProximaNova";
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 2.8px;
+		position: relative;
+
+		&::before {
+			content: "";
+			width: 44px;
+			height: 2px;
+			background-color: #a9946e;
+			position: absolute;
+			top: 19px
+		}
+
+		&::after {
+			content: "";
+			width: 33px;
+			height: 1px;
+			border: 0.1px solid #bea67c;
+			position: absolute;
+			left: 121px;
+			top: 5px;
+
+
+		}
+
+
+
+
+
+
+
+	}
+
+	&__arr {
+		position: absolute;
+		top: 214px;
+		right: 182px;
+
+
+	}
+
+	&__img {
+		position: relative;
+
+		&::after {
+			content: "02";
+
+
+
+		}
+
+	}
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+.block-wood_r {
+	padding: 91px 0px 104px 0px;
+	position: relative;
+
+
+
+	&::before {
+		content: "D";
+		width: 187px;
+		height: 264px;
+		opacity: 0.07;
+		color: #bea67c;
+		font-family: "ProximaNova";
+		font-size: 396px;
+		font-weight: 700;
+		text-transform: uppercase;
+		position: absolute;
+		right: 334px;
+		top: -155px;
+		z-index: 5;
+
+
+	}
+
+
+
+
+
+
+
+	&__wrapper {
+		@include flexbox();
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}
+
+.repeatright {
+
+
+	&__info {
+		margin-top: 118px;
+		margin-left: 122px;
+		position: relative;
+
+
+	}
+
+
+
+	&__tittle {
+		margin: 0px 0px 32px 0px;
+		color: #010101;
+		font-family: "ProximaNova";
+		font-size: 48px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 3.36px;
+		text-align: right;
+
+
+		&::before {
+			content: "";
+			width: 151px;
+			height: 1px;
+			border: 1px solid #000000;
+			position: absolute;
+			top: 20px;
+			left: 300px;
+
+		}
+	}
+
+	&__text {
+		width: 267px;
+		color: #464646;
+		font-family: "ProximaNova";
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 25px;
+		letter-spacing: 0.38px;
+		margin: 0px 0px 32px 0px;
+		text-align: right;
+
+		&::before {
+			content: "";
+			width: 44px;
+			height: 4px;
+			background-color: #bea67c;
+			position: absolute;
+			top: 90px;
+			left: 300px;
+
+		}
+	}
+
+	&__more {
+		color: #000000;
+		font-family: "ProximaNova";
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 2.8px;
+		position: relative;
+		display: block;
+		text-align: center;
+
+		&::before {
+			content: "";
+			width: 44px;
+			height: 2px;
+			background-color: #a9946e;
+			position: absolute;
+			top: 19px
+		}
+
+		&::after {
+			content: "";
+			width: 33px;
+			height: 1px;
+			border: 0.1px solid #bea67c;
+			position: absolute;
+			left: 210px;
+			top: 5px;
+
+
+		}
+
+
+
+
+
+
+
+	}
+
+	&__arr {
+		position: absolute;
+		top: 214px;
+		left: 244px;
+
+
+	}
+
+	&__img {}
+}
