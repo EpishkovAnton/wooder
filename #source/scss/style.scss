@@ -296,12 +296,6 @@ body {
 	&__img {
 		position: relative;
 
-		&::after {
-			content: "02";
-
-
-
-		}
 
 	}
 }
@@ -452,4 +446,77 @@ body {
 	}
 
 	&__img {}
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+
+.quality {
+	padding: 132px 0px 40px 0px;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.repeat {
+
+
+	&__tittle {}
+
+	&__text {
+		&_q {
+			text-align: center;
+			width: 545px;
+			color: #464646;
+			font-family: "ProximaNova";
+			font-size: 15px;
+			font-weight: 400;
+			line-height: 25px;
+
+		}
+
+	}
+}
+
+.video {
+	@include flexbox();
+
+
+	&__column {
+		display: flex;
+		flex-direction: column;
+		margin: 0px 84px 0px 0px;
+		width: 272px;
+		height: 272px;
+		border: 1px solid #e1e1e1;
+		border-radius: 50%;
+		justify-content: center;
+		align-items: center;
+
+	}
+
+	&__contemt {}
+
+	&__foto {}
+
+	&__link {}
+
+	&__circle {}
+
+	&__text {
+		color: #000000;
+		font-family: "Proxima Nova";
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		/* Text style for "Innovative" */
+		letter-spacing: 0.4px;
+		margin: 43px 0px 0px 0px;
+		text-align: center;
+		position: relative;
+	}
 }
